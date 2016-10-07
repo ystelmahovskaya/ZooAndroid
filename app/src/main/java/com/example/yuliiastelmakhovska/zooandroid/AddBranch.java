@@ -30,8 +30,9 @@ public class AddBranch extends AppCompatActivity {
             dlgAlert.create().show();
         }
         else {
-            Main.branches.branches.add(new Shop(Name));
-            Main.branches.printToFile(this);
+            Shop shop= new Shop(Name);
+            Main.branches.branches.add(shop);
+            Main.branches.printToFile(this,shop);
             Intent returnIntent = new Intent();
             setResult(Activity.RESULT_OK, returnIntent);
             this.finish();

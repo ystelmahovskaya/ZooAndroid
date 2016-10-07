@@ -38,7 +38,7 @@ public class Factory {
             return new Birds();
         }
 
-        else if(type.equalsIgnoreCase("LittleAnimals")){
+        else if(type.equalsIgnoreCase("Little Animal")){
 
             return new LittleAnimals();
         }
@@ -46,7 +46,7 @@ public class Factory {
 
             return new Spider();
         }
-        else if(type.equalsIgnoreCase("Insects")){
+        else if(type.equalsIgnoreCase("Insect")){
 
             return new Insects();
         }

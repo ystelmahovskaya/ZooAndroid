@@ -22,7 +22,7 @@ import java.util.List;
 
 public class BranchFactory {
     List<Shop> branches= new ArrayList<Shop>();
-    int activeBranch=0;
+    int activeBranch=-1;
     public String getAppPath(Activity a) {
         return a.getApplicationContext().getFilesDir().getAbsolutePath();
     }
@@ -86,9 +86,9 @@ public class BranchFactory {
         }
         return products;
     }
-    public void printToFile(Activity a) throws IOException {
+    public void printToFile(Activity a, Shop shop) throws IOException {
 
-        String filename = "branch_" + branches.get(activeBranch).getBranchName() + ".json";
+        String filename = "branch_" + shop.getBranchName() + ".json";
         String folder = getAppPath(a) + File.separator + "branches" + File.separator;
         //try {
         File f = new File(folder);
@@ -99,7 +99,7 @@ public class BranchFactory {
         FileWriter fw = new FileWriter(folder + filename);
         BufferedWriter bfw = new BufferedWriter(fw);
 
-        for (Product product : branches.get(activeBranch).getListOfProducts()) {
+        for (Product product : shop.getListOfProducts()) {
             bfw.write(gsonProduct.toJson(product, Product.class));
             bfw.newLine();
         }

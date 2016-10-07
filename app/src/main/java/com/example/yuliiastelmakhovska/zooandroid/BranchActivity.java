@@ -31,7 +31,7 @@ public class BranchActivity extends AppCompatActivity {
             listView = (ListView) findViewById(R.id.ListView1);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1/*, getBranchArray(Main.branches.branches)*/);
             listView.setAdapter(adapter);
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Main.branches.activeBranch=position;
