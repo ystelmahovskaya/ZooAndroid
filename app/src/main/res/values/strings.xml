@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZooAndroid</string>
+    <string name="title_activity_branch">BranchActivity</string>
+</resources>
