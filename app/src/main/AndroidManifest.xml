@@ -25,8 +25,8 @@
         <activity android:name=".AddAdmin" />
         <activity android:name=".AddBranch" />
         <activity android:name=".BranchActivity" />
-        <activity android:name=".AddFish" />
-        <activity android:name=".ProductActivity"></activity>
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".AddProduct"></activity>
     </application>
 
 </manifest>
