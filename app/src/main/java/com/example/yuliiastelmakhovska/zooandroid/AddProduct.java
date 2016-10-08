@@ -1,5 +1,7 @@
 package com.example.yuliiastelmakhovska.zooandroid;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -113,7 +115,7 @@ else if(position==1) {
     amphibiumPoisonous.setVisibility(View.GONE);
     amphibiumVenomous.setVisibility(View.GONE);
     amphibiumSaltWater.setVisibility(View.GONE);
-    itemPosition=0;
+    itemPosition=1;
 }
         else if(position==2){
             productName.setVisibility(View.VISIBLE);
@@ -131,7 +133,7 @@ else if(position==1) {
     amphibiumPoisonous.setVisibility(View.GONE);
     amphibiumVenomous.setVisibility(View.GONE);
     amphibiumSaltWater.setVisibility(View.GONE);
-    itemPosition=1;
+    itemPosition=2;
 }
 else if(position==3){
             productName.setVisibility(View.VISIBLE);
@@ -149,7 +151,7 @@ else if(position==3){
     amphibiumPoisonous.setVisibility(View.GONE);
     amphibiumVenomous.setVisibility(View.GONE);
     amphibiumSaltWater.setVisibility(View.GONE);
-    itemPosition=2;
+    itemPosition=3;
 
 
 }    else if(position==4){
@@ -168,7 +170,7 @@ else if(position==3){
     amphibiumPoisonous.setVisibility(View.GONE);
     amphibiumVenomous.setVisibility(View.GONE);
     amphibiumSaltWater.setVisibility(View.GONE);
-    itemPosition=3;
+    itemPosition=4;
 
 }
 else if(position==5){
@@ -187,7 +189,7 @@ else if(position==5){
     amphibiumPoisonous.setVisibility(View.GONE);
     amphibiumVenomous.setVisibility(View.GONE);
     amphibiumSaltWater.setVisibility(View.GONE);
-    itemPosition=4;
+    itemPosition=5;
 }
 else if(position==6){
             productName.setVisibility(View.VISIBLE);
@@ -205,7 +207,7 @@ else if(position==6){
     amphibiumPoisonous.setVisibility(View.VISIBLE);
     amphibiumVenomous.setVisibility(View.VISIBLE);
     amphibiumSaltWater.setVisibility(View.VISIBLE);
-    itemPosition=5;
+    itemPosition=6;
 
 }
     }
@@ -216,36 +218,32 @@ else if(position==6){
     }
 
     public Product addProduct(int index){
-        System.out.println("__________________"+categories.get(index));
 
     Product product = Factory.getInstance().getProduct(categories.get(index));
     product.setNameOfProduct(productName.getText().toString());
     product.setPrice(Double.parseDouble(productPrice.getText().toString()));
 
-    if(product instanceof AliveIndividuals){
-        ((AliveIndividuals) product).setAliveIndividualsParameters(Integer.parseInt(productAliveAge.getText().toString()),productAlivePredator.isChecked());
+    if(product instanceof AliveIndividuals) {
+        ((AliveIndividuals) product).setAliveIndividualsParameters(Integer.parseInt(productAliveAge.getText().toString()), productAlivePredator.isChecked());
+
+        if (product instanceof Birds) {
+            ((Birds) product).setBirdsParameters(species.getText().toString());
+        } else if (product instanceof Fish) {
+
+            ((Fish) product).setFishParameters(Integer.parseInt(fishTemperature.getText().toString()), fishSaltWater.isChecked());
+
+        } else if (product instanceof Spider) {
+            ((Spider) product).setSpidersParameters(spiderVenomous.isChecked(), spiderHabitat.getText().toString());
+        } else if (product instanceof Insects) {
+            ((Insects) product).setInsectsparameters(insectVenomous.isChecked(), insectFlying.isChecked());
+
+        } else if (product instanceof LittleAnimals) {
+            ((LittleAnimals) product).setAvarageLife(Integer.parseInt(littleAnAvarageLife.getText().toString()));
+        } else if (product instanceof Amphibium) {
+            ((Amphibium) product).setAmphibiumParameters(amphibiumVenomous.isChecked(), amphibiumPoisonous.isChecked(), amphibiumSaltWater.isChecked());
+
+        }
     }
-if(product instanceof Birds){
-    ((Birds) product).setBirdsParameters(species.getText().toString());
-}
-    else if(product instanceof Fish){
-
-    ((Fish) product).setFishParameters(Integer.parseInt(fishTemperature.getText().toString()),fishSaltWater.isChecked());
-    System.out.println(fishSaltWater.getSplitTrack());
-}
-    else if(product instanceof Spider){
-   ((Spider) product).setSpidersParameters(spiderVenomous.isChecked(),spiderHabitat.getText().toString());
-}
-    else if(product instanceof Insects){
-    ((Insects) product).setInsectsparameters(insectVenomous.isChecked(),insectFlying.isChecked());
-
-}
-    else if(product instanceof LittleAnimals){
-    ((LittleAnimals) product).setAvarageLife(Integer.parseInt(littleAnAvarageLife.getText().toString()));
-}else if(product instanceof Amphibium){
-    ((Amphibium) product).setAmphibiumParameters(amphibiumVenomous.isChecked(),amphibiumPoisonous.isChecked(),amphibiumSaltWater.isChecked());
-
-}
     return product;
     }
 
@@ -255,6 +253,8 @@ if(product instanceof Birds){
 
             Main.branches.branches.get(Main.branches.activeBranch).getListOfProducts().add(addProduct(itemPosition));
             Main.branches.printToFile(this, Main.branches.branches.get(Main.branches.activeBranch));
+        Intent returnIntent = new Intent();
+        setResult(Activity.RESULT_OK, returnIntent);
         this.finish();
        // }
     //catch (Exception e){

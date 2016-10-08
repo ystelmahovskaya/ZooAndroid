@@ -134,7 +134,8 @@
                 android:ems="10"
                 android:id="@+id/editTextLittAnimLife"
                 android:hint="avarage life length"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:elevation="10dp" />
 
             <Switch
                 android:text="Venomous"

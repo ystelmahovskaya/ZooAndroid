@@ -23,6 +23,7 @@ import java.util.List;
 public class BranchFactory {
     List<Shop> branches= new ArrayList<Shop>();
     int activeBranch=-1;
+
     public String getAppPath(Activity a) {
         return a.getApplicationContext().getFilesDir().getAbsolutePath();
     }
