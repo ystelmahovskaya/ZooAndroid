@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_product"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.yuliiastelmakhovska.zooandroid.AddProduct">
+
+    <Button
+        android:text="save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/buttonsave"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:onClick="editProduct"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/spinnerProducts"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTextName"
+                android:hint="Name" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/editTextPrice"
+                android:hint="Price" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextAliveAge"
+                android:hint="Age" />
+
+            <Switch
+                android:text="predator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchPredator" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTextSpecies"
+                android:hint="species"
+                android:visibility="invisible" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextFishTemp"
+                android:hint="temperature"
+                android:visibility="gone" />
+
+            <Switch
+                android:text="salt water"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchFishSaltWater"
+                android:visibility="gone" />
+
+            <Switch
+                android:text="venomous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchSpiderVenomous"
+                android:visibility="gone" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editTextSpiderHabitat"
+                android:elevation="12dp"
+                android:hint="Habitat"
+                android:visibility="gone" />
+
+            <Switch
+                android:text="venomous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchInsectVenomous"
+                android:visibility="gone" />
+
+            <Switch
+                android:text="flying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/switchInsectFlying" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/editTextLittAnimLife"
+                android:hint="avarage life length"
+                android:visibility="gone"
+                android:elevation="10dp" />
+
+            <Switch
+                android:text="Venomous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchAmphibiumVenomous"
+                android:visibility="gone"                />
+
+            <Switch
+                android:text="Poisonous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchAmphibiumPoisonous"
+                android:visibility="gone"/>
+
+            <Switch
+                android:text="Salt Water"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchAmphibiumSaltWater"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

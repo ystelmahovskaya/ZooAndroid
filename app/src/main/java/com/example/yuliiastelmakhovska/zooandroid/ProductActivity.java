@@ -81,7 +81,9 @@ public class ProductActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
     AdapterView.AdapterContextMenuInfo info=(AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
         if (item.getTitle() == "edit") {
-            Toast.makeText(this, "Action 1 invoked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "saved", Toast.LENGTH_SHORT).show();
+            Main.branches.activeItem=info.position;
+            startActivityForResult((new Intent(ProductActivity.this, Edit_Product.class)), 1);
 
         }
         else if (item.getTitle() == "delete") {
