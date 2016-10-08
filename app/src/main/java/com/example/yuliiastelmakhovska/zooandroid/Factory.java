@@ -26,28 +26,29 @@ public class Factory {
             return null;
         }
         if(type.equalsIgnoreCase("Fish")){
-
+            System.out.println("FISH");
             return new Fish();
         }
         else if(type.equalsIgnoreCase("Amphibium")){
-
+            System.out.println("AMPHIBIUM");
             return new Amphibium();
+
         }
         else if(type.equalsIgnoreCase("Bird")){
-
+            System.out.println("BIRD");
             return new Birds();
         }
 
         else if(type.equalsIgnoreCase("Little Animal")){
-
+            System.out.println("LITTLE");
             return new LittleAnimals();
         }
         else if(type.equalsIgnoreCase("Spider")){
-
+            System.out.println("SPIDER");
             return new Spider();
         }
         else if(type.equalsIgnoreCase("Insect")){
-
+            System.out.println("INSECT");
             return new Insects();
         }
         else {

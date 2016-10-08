@@ -35,6 +35,7 @@ public class BranchActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Main.branches.activeBranch=position;
+                    System.out.println(position+"+++++++++++++");
                     startActivity(new Intent(BranchActivity.this, ProductActivity.class));
                 }
             });

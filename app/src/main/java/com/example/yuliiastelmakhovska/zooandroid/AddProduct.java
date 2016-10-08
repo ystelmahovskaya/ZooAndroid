@@ -216,7 +216,8 @@ else if(position==6){
     }
 
     public Product addProduct(int index){
-if(index!=-1){
+        System.out.println("__________________"+categories.get(index));
+
     Product product = Factory.getInstance().getProduct(categories.get(index));
     product.setNameOfProduct(productName.getText().toString());
     product.setPrice(Double.parseDouble(productPrice.getText().toString()));
@@ -243,9 +244,9 @@ if(product instanceof Birds){
     ((LittleAnimals) product).setAvarageLife(Integer.parseInt(littleAnAvarageLife.getText().toString()));
 }else if(product instanceof Amphibium){
     ((Amphibium) product).setAmphibiumParameters(amphibiumVenomous.isChecked(),amphibiumPoisonous.isChecked(),amphibiumSaltWater.isChecked());
+
 }
-}
-    return null;
+    return product;
     }
 
     public void saveProduct(View v) throws IOException {
@@ -254,6 +255,7 @@ if(product instanceof Birds){
 
             Main.branches.branches.get(Main.branches.activeBranch).getListOfProducts().add(addProduct(itemPosition));
             Main.branches.printToFile(this, Main.branches.branches.get(Main.branches.activeBranch));
+        this.finish();
        // }
     //catch (Exception e){
       //  AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
