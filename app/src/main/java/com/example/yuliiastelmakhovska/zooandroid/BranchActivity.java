@@ -24,9 +24,11 @@ public class BranchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_branch);
         try {
             Main.branches.loadBranches(this);
+
             if (Main.branches.branches.size() == 0) {
 
-                startActivity(new Intent(BranchActivity.this, AddBranch.class));
+                startActivityForResult((new Intent(BranchActivity.this, AddBranch.class)), 1);
+
             }
             listView = (ListView) findViewById(R.id.ListView1);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1/*, getBranchArray(Main.branches.branches)*/);

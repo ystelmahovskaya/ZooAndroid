@@ -26,19 +26,7 @@
         android:textColor="@android:color/black"
         android:textColorHighlight="@color/abc_input_method_navigation_guard" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:hint="Password"
-        android:alpha="1"
-        android:textColorHighlight="@color/abc_input_method_navigation_guard"
-        android:layout_above="@+id/button"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="67dp"
-        android:background="?attr/actionModeBackground" />
+
 
     <EditText
         android:layout_width="match_parent"
@@ -53,7 +41,19 @@
         android:layout_alignParentStart="true"
         android:background="?attr/actionModeBackground"
          />
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:hint="Password"
+        android:alpha="1"
+        android:textColorHighlight="@color/abc_input_method_navigation_guard"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="67dp"
+        android:background="?attr/actionModeBackground" />
     <Button
         android:text="login"
         android:layout_width="match_parent"
