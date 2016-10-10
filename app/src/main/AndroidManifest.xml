@@ -26,9 +26,9 @@
         <activity android:name=".AddBranch" />
         <activity android:name=".BranchActivity" />
         <activity android:name=".ProductActivity" />
-        <activity android:name=".AddProduct"/>
-        <activity android:name=".Edit_Product">
-        </activity>
+        <activity android:name=".AddProduct" />
+        <activity android:name=".Edit_Product"></activity>
+        <activity android:name=".ItemView"></activity>
     </application>
 
 </manifest>

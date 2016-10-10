@@ -36,6 +36,15 @@ public class ProductActivity extends AppCompatActivity {
             }
         };
         reloadProducts();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Main.branches.activeItem=position;
+
+                startActivity(new Intent(ProductActivity.this, ItemView.class));
+            }
+        });
     }
 
     public void callAddNewProduct(View v){
