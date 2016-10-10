@@ -8,7 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.yuliiastelmakhovska.zooandroid.LoginActivity">
+    tools:context="com.example.yuliiastelmakhovska.zooandroid.LoginActivity"
+    android:background="@drawable/tropiczoo"
+    android:alpha="1"
+    android:elevation="21dp">
 
     <TextView
         android:text="Login"
@@ -18,56 +21,49 @@
         android:layout_alignParentStart="true"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:textStyle="normal|bold" />
-
-    <TextView
-        android:text="Username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="47dp"
-        android:id="@+id/textView2" />
-
-    <TextView
-        android:text="Password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_marginTop="32dp"
-        android:id="@+id/textView3"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="28dp"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:hint="Username" />
+        android:textStyle="normal|bold"
+        android:alpha="1"
+        android:textColor="@android:color/black"
+        android:textColorHighlight="@color/abc_input_method_navigation_guard" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginTop="36dp"
         android:id="@+id/editText4"
-        android:layout_below="@+id/textView3"
+        android:hint="Password"
+        android:alpha="1"
+        android:textColorHighlight="@color/abc_input_method_navigation_guard"
+        android:layout_above="@+id/button"
         android:layout_alignParentStart="true"
-        android:hint="Password" />
+        android:layout_marginBottom="67dp"
+        android:background="?attr/actionModeBackground" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:hint="Username"
+        android:alpha="1"
+        android:textColorHighlight="@color/abc_input_method_navigation_guard"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:background="?attr/actionModeBackground"
+         />
 
     <Button
         android:text="login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText4"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp"
         android:id="@+id/button"
-        android:onClick="onLogin" />
+        android:onClick="onLogin"
+        android:alpha="1"
+        android:textColorHighlight="@android:color/black"
+        android:layout_marginBottom="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
